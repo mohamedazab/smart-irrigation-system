@@ -14,3 +14,6 @@ class YourTestClass(TestCase):
     def test_one_plus_one_equals_two(self):
             print("Method: test_one_plus_one_equals_two (dummy test).")
             self.assertEqual(1 + 1, 2)
+    def test_one_plus_one_false(self):
+            print("Method: test_one_plus_one_equals_two (dummy test).")
+            self.assertEqual(1, 2)

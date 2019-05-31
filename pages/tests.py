@@ -14,6 +14,7 @@ class YourTestClass(TestCase):
     def test_one_plus_one_equals_two(self):
             print("Method: test_one_plus_one_equals_two (dummy test).")
             self.assertEqual(1 + 1, 2)
-    def test_one_plus_one_false(self):
-            print("Method: test_one_plus_one_equals_two (dummy test).")
-            self.assertEqual(1, 2)
+    #use this test to ensure that docker image only gets published when all tests pass
+    # def test_one_plus_one_false(self):
+    #         print("Method: test_one_plus_one_equals_two (dummy test).")
+    #         self.assertEqual(1, 2)

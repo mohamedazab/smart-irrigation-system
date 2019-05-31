@@ -40,7 +40,7 @@ jobs:
           destination: test-reports
   build:
     environment:
-      IMAGE_NAME: mohamedazab/building-on-ci
+      IMAGE_NAME: mohamedazab/django-ci-demo
     docker:
      
       - image: circleci/python:3.6.1

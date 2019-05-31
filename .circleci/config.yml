@@ -57,7 +57,7 @@ jobs:
           name: login to  Docker Hub
           command: docker login -u "$DOCKERHUB_USERNAME" -p "$DOCKERHUB_PASS"
       - run:
-          name: publish to DOcker Hub
+          name: publish to Docker Hub
           command: docker push $IMAGE_NAME:latest
 workflows:
   version: 2

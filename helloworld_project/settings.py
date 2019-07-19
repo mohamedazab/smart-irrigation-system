@@ -75,9 +75,12 @@ WSGI_APPLICATION = 'helloworld_project.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'cfc-irrigation-system',
+        'HOST': 'mongodb+srv://cfc-user:cfc-user@cfc-irrigation-system-cacsb.mongodb.net/test?retryWrites=true&w=majority',
+        'USER': 'cfc-user',
+        'PASSWORD': 'cfc-user',
     }
 }
 

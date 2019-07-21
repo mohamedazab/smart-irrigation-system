@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="8dip"
+    android:paddingBottom="8dip"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/PlantImage"
+        android:layout_width="109dp"
+        android:layout_height="116dp"
+        app:srcCompat="@mipmap/plant2"
+        tools:layout_editor_absoluteY="16dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <TextView
+        android:id="@+id/Name"
+        android:layout_width="83dp"
+        android:layout_height="40dp"
+        android:text="Name"
+        android:textColor="#fff"
+        android:textAlignment="center"
+        android:background="#000"
+        android:textSize="30dp"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/PlantImage" />
+
+    <TextView
+        android:id="@+id/PlantName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="27dp"
+        android:text="PlantName"
+        android:textColor="#000"
+        android:textAlignment="center"
+        app:layout_constraintLeft_toRightOf="@+id/Name"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/PlantImage" />
+
+    <TextView
+        android:id="@+id/Size"
+        android:layout_width="84dp"
+        android:layout_height="33dp"
+        android:text="Class"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:background="#000"
+        android:textSize="30dp"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/Name"
+        tools:layout_editor_absoluteY="212dp" />
+
+    <TextView
+        android:id="@+id/PlantSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="27dp"
+        android:text="PlantSize"
+        android:textAlignment="center"
+        android:textColor="#000"
+        app:layout_constraintLeft_toRightOf="@+id/Size"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/PlantName" />
+
+    <TextView
+        android:id="@+id/MoistureLevel"
+        android:layout_width="174dp"
+        android:layout_height="36dp"
+        android:text="Threshold"
+        android:textColor="#fff"
+        android:textAlignment="center"
+        android:background="#000"
+        android:textSize="30dp"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/Size"
+        tools:layout_editor_absoluteY="254dp" />
+
+    <TextView
+        android:id="@+id/PlantMoisture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="27dp"
+        android:text="Moist"
+        android:textAlignment="center"
+        android:textColor="#000"
+        app:layout_constraintLeft_toRightOf="@+id/MoistureLevel"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.024"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/PlantSize" />
+
+    <TextView
+        android:id="@+id/TimeToWater"
+        android:layout_width="199dp"
+        android:layout_height="37dp"
+        android:text="last watered"
+        android:textColor="#fff"
+        android:textAlignment="center"
+        android:background="#000"
+        android:textSize="30dp"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/MoistureLevel" />
+
+    <TextView
+        android:id="@+id/PlantTimeToWater"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="27dp"
+        android:text="Time"
+        android:textAlignment="center"
+        android:textColor="#000"
+        app:layout_constraintLeft_toRightOf="@+id/TimeToWater"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.009"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/MoistureLevel" />
+
+    <TextView
+        android:id="@+id/Info"
+        android:layout_width="116dp"
+        android:layout_height="37dp"
+        android:text="Info"
+        android:textColor="#fff"
+        android:textAlignment="center"
+        android:background="#000"
+        android:textSize="30dp"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/TimeToWater"
+        tools:layout_editor_absoluteY="359dp" />
+
+    <TextView
+        android:id="@+id/PlantInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="27dp"
+        android:text="Info"
+        android:textAlignment="center"
+        android:textColor="#000"
+        app:layout_constraintLeft_toRightOf="@+id/Info"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.009"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/PlantTimeToWater" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

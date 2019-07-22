@@ -1,13 +1,25 @@
 # from django.shortcuts import render
+import json
+
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
+
 from .models import Plant, User
 
-def createPlant(x,y,z):#plantJSON):
-    print(x)
-    print(y)
-    print(z)
-    return 1
-    # Plant.objects.mongo_insert_one(plantJSON)
+@csrf_exempt
+def createPlant(request):#plantJSON):
+    print("new request with: ", request.method)
 
-def retrievePlane(plantID):
+    if request.method != "POST" or request.body== None:
+        response  = HttpResponse('{"message": false}', content_type="application/json")
+        response.status_code = 300
+        return response
+    
+    body = json.loads(request.body)
+    Plant.objects.mongo_insert(body)
+    return HttpResponse('{"message": false}')
+
+@csrf_exempt
+def retrievePlant(plantID):
     return Plant.objects.mongo_find_one({'_id': plantID})

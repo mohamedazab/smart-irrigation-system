@@ -77,6 +77,7 @@ WSGI_APPLICATION = 'helloworld_project.wsgi.application'
 DATABASES = {
         'default': {
         'ENGINE': 'djongo',
+        'ENFORCE_SCHEMA': True,
         'NAME': 'cfc-irrigation-system',
         'HOST': 'mongodb+srv://cfc-user:cfc-user@cfc-irrigation-system-cacsb.mongodb.net/test?retryWrites=true&w=majority',
         'USER': 'cfc-user',

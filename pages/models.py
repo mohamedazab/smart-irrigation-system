@@ -5,6 +5,7 @@ class Plant(models.Model):
     moisture_threshold = models.FloatField()
     recommended_ph = models.FloatField()
     recommended_temperature = models.FloatField()
+    objects = models.DjongoManager()
 
 
 class User(models.Model):
@@ -15,3 +16,4 @@ class User(models.Model):
         to=Plant,
         on_delete=models.DO_NOTHING
     )
+    objects = models.DjongoManager()

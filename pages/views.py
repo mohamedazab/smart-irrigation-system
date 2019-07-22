@@ -18,7 +18,7 @@ def createPlant(request):#plantJSON):
     
     body = json.loads(request.body)
     Plant.objects.mongo_insert(body)
-    return HttpResponse('{"message": false}')
+    return HttpResponse('{"message": true}')
 
 @csrf_exempt
 def retrievePlant(plantID):

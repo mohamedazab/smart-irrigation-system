@@ -105,3 +105,8 @@ venv.bak/
 
 #VSCODE
 .vscode/
+
+# django migrations 
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py

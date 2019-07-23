@@ -7,13 +7,18 @@ class Plant(models.Model):
     recommended_temperature = models.FloatField()
     objects = models.DjongoManager()
 
+class Cell(models.Model):
+    positionX = models.IntegerField()
+    positionY = models.IntegerField()
+    crop = models.ForeignKey(
+        to=Plant,
+        on_delete=models.DO_NOTHING
+    )
+    current_moisture = models.FloatField()
 
 class User(models.Model):
     premium = models.BooleanField()
     email = models.EmailField()
     password_salt = models.CharField(max_length=128)
-    field = models.ArrayReferenceField(
-        to=Plant,
-        on_delete=models.DO_NOTHING
-    )
+    grid = models.ArrayModelField(Cell, default=None)
     objects = models.DjongoManager()

@@ -1,20 +1,26 @@
 package com.example.catastrophe;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Pair;
 import android.view.Gravity;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -22,9 +28,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView bgapp,clover;
-    Animation bganim,clovernim,frombottom;
-    LinearLayout textsplash,texthome,menus,login_signup_form;
+    ImageView bgapp,clover,test_btn,profile_pic;
+    Animation bganim,clovernim,frombottom,fromup;
+    LinearLayout textsplash,texthome,menus,login_signup_form,test_btn_layout;
     Button login_tab,signup_tab,login_btn,signup_btn;
     EditText input_email,input_password;
 
@@ -35,16 +41,22 @@ public class MainActivity extends AppCompatActivity {
 
         bgapp = (ImageView) findViewById(R.id.bgapp);
         clover = (ImageView) findViewById(R.id.clover);
+        profile_pic = (ImageView) findViewById(R.id.profile_pic);
+
+
         textsplash = (LinearLayout) findViewById(R.id.textsplash);
         texthome = (LinearLayout) findViewById(R.id.texthome);
         texthome.setAlpha(0);
         login_signup_form = (LinearLayout) findViewById(R.id.login_signup_form);
+        test_btn_layout = (LinearLayout) findViewById(R.id.test_btn_layout);
 //        menus = (LinearLayout) findViewById(R.id.menus);
 
         login_tab = (Button) findViewById(R.id.logintab);
         signup_tab = (Button) findViewById(R.id.signuptab);
         login_btn = (Button) findViewById(R.id.btn_login);
         signup_btn = (Button) findViewById(R.id.btn_signup);
+//        test_btn = (Button) findViewById(R.id.test_btn);
+//        test_btn = (ImageView) findViewById(R.id.test_btn);
 
         input_email = (EditText) findViewById(R.id.input_email);
         input_password = (EditText) findViewById(R.id.input_password);
@@ -52,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         bganim = AnimationUtils.loadAnimation(this,R.anim.bganim);
         clovernim = AnimationUtils.loadAnimation(this,R.anim.clovernim);
         frombottom = AnimationUtils.loadAnimation(this,R.anim.frombottom);
+        fromup = AnimationUtils.loadAnimation(this,R.anim.fromup);
 
         signup_btn.setVisibility(View.GONE);
         login_btn.setVisibility(View.VISIBLE);
@@ -89,12 +102,13 @@ public class MainActivity extends AppCompatActivity {
 
         if (valid){
             //animate the scene
-            bgapp.animate().translationY(-2250).setDuration(800).setStartDelay(800);
-            clover.animate().translationX(-300).alpha(0).setDuration(800).setStartDelay(800);
+            bgapp.animate().translationY(-2250).setDuration(800);
+            clover.animate().translationX(-300).alpha(0).setDuration(800);
             texthome.setAlpha(1);
             texthome.startAnimation(frombottom);
-            textsplash.animate().translationY(140).alpha(0).setDuration(800).setStartDelay(800);
-            login_signup_form.animate().translationY(-2250).alpha(0).setDuration(800).setStartDelay(800);
+            test_btn_layout.startAnimation(frombottom);
+            textsplash.animate().translationY(140).alpha(0).setDuration(800);
+            login_signup_form.animate().translationY(-2250).alpha(0).setDuration(800);
 
         }
         else{
@@ -135,9 +149,33 @@ public class MainActivity extends AppCompatActivity {
         signup_tab.setBackgroundColor(Color.argb(15,255,0,0));
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void Test_button(View view){
+//        test_btn.setVisibility(View.GONE);
+//        bgapp.animate().translationYBy(200).setDuration(800);
+//        texthome.animate().translationYBy(-200).alpha(0).setDuration(800);
+        Intent intent = new Intent(this, PlantProfileActivity.class);
+//        Handler handler = new Handler();
+//        handler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                // Do something after 5s = 5000ms
+//                startActivity(intent);
+//            }
+//        }, 1200);
+        Pair[] pairs = new Pair[2];
+        pairs[0] = new Pair<View,String>(profile_pic,"transition_profile_1");
+        pairs[1] = new Pair<View,String>(bgapp,"transition_profile_2");
 
-    public void OpenProfiles(View view) {
-        Intent intent = new Intent(this, ProfilesActivity.class);
-        startActivity(intent);
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this
+                ,pairs);
+
+        startActivity(intent,options.toBundle());
     }
+
+
+//    public void OpenProfiles(View view) {
+//        Intent intent = new Intent(this, ProfilesActivity.class);
+//        startActivity(intent);
+//    }
 }

@@ -173,6 +173,20 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent,options.toBundle());
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void Add_plant(View view){
+        Intent intent = new Intent(this, AddPlantActivity.class);
+        Pair[] pairs = new Pair[1];
+        pairs[0] = new Pair<View,String>(bgapp,"transition_profile_2");
+
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this
+                ,pairs);
+
+        startActivity(intent,options.toBundle());
+    }
+
+
+
 
 //    public void OpenProfiles(View view) {
 //        Intent intent = new Intent(this, ProfilesActivity.class);

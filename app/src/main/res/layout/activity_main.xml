@@ -49,7 +49,7 @@
 
     </LinearLayout>
 
-    <!--Middle text-->
+    <!--Top text-->
 
     <LinearLayout
         android:id="@+id/textsplash"
@@ -288,7 +288,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginBottom="300dp"
+        android:layout_marginBottom="150dp"
         android:translationX="-100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -302,6 +302,15 @@
             android:onClick="Test_button"
             android:src="@mipmap/plant_default"
             android:transitionName="transition_profile_1"/>
+
+        <ImageView
+            android:id="@+id/add_plant"
+            android:layout_width="177dp"
+            android:layout_height="116dp"
+            android:background="#00000000"
+            android:onClick="Add_plant"
+            android:src="@drawable/ic_add_box_black_24dp"
+            />
     </LinearLayout>
 
     <ImageView
@@ -317,7 +326,8 @@
         app:layout_constraintHorizontal_bias="0.923"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:transitionName="transition_profile_2"/>
+        android:transitionName="transition_profile_2"
+        />
 
     <!--Old Buttons-->
 

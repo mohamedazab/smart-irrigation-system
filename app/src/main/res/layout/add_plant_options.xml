@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:textAlignment="center"
+    tools:context=".AddPlantActivity">
+
+    <ImageView
+        android:id="@+id/bgapp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bgapp"
+        android:layout_width="500dp"
+        android:layout_height="900dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:translationY="-2250px"
+        android:transitionName="transition_profile_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.923"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/texthome"
+        android:elevation="6dp"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add a Plant"
+            android:textColor="#FFF"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose one of these options"
+            android:textColor="#FFF"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:translationY="-350dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bgapp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/ic_rounded_box"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:text="Enter the name of the plant"
+                android:textSize="20sp"
+                android:textColor="#FFF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/plant_name_from_user"
+                android:layout_marginTop="16dp"
+                android:layout_width="256dp"
+                android:layout_height="44dp"
+                android:background="#FFF"
+                android:hint="Plant name"
+                android:inputType="text"
+                android:cursorVisible="true"
+                android:paddingHorizontal="8dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="51dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="-100dp"
+            android:background="@drawable/ic_brightness_1_black_24dp"
+            android:text="OR"
+            android:textColor="#4FFDDB"
+            android:textSize="24sp"
+            android:textAlignment="center"
+            android:paddingTop="7dp"
+            android:textStyle="bold"
+            android:elevation="7dp"/>
+
+        <LinearLayout
+            android:onClick="Take_photo"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:layout_marginTop="-60dp"
+            android:background="@drawable/ic_rounder_box_2"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_marginTop="-70dp"
+                android:layout_width="92dp"
+                android:layout_height="74dp"
+                android:src="@drawable/ic_add_a_photo_black_24dp" />
+
+            <TextView
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="-80dp"
+                android:text="Take a photo for the plant"
+                android:textSize="20sp"
+                android:textColor="#FFF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,6 +24,7 @@
                 android:value=".MainActivity" />
         </activity>
         <activity android:name=".PlantProfileActivity" />
+        <activity android:name=".AddPlantActivity" />
     </application>
 
 </manifest>

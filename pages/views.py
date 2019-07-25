@@ -1,21 +1,17 @@
-# from django.shortcuts import render
 import json
 
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
- 
+from django.utils import timezone 
 from django.conf import settings
 from django.contrib.auth.hashers import check_password,make_password
-
-
+from django.contrib.sessions.models import Session
 
 from .models import Plant, User
 from bson.objectid import ObjectId
 
 
-# hashtables for sessions
-session_keys = {}
 @csrf_exempt
 def createPlant(request):
     # Only listen to POST requests
@@ -150,15 +146,29 @@ def logIn(request):
     else:
         if not request.session.exists(request.session.session_key):
             request.session.create()
+            request.session["user_email"] = body["email"] 
         else:
             response_message = "already logged in"
-            
+    # Session.objects.all().delete()
+    # request.session.clear()
 
+
+    user  = session_validation(request.session.session_key)
+    print("user: ",user)
     return formulateResponse(response_message, response_success, response_code) 
 
-    # print(body["password"]," -- ", candidate_user["password"])
-    # print("candidate user", check_password(body["password"], candidate_user["password"]))
+#returns a user for the current session
+def session_validation(session_key):
     
+    session= Session.objects.filter(session_key = session_key)
+    print("the sessions\n", session, type(session))
+    if len(session)<1:
+        return None
+    session_data = session[0].get_decoded()
+    print("data", session_data)
+
+    return session_data['user_email']
+
 
 def formulateResponse(message, success, code):
     resp_dict = {"success": success, "message": message}

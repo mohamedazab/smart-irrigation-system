@@ -18,7 +18,7 @@ class Cell(models.Model):
 
 class User(models.Model):
     premium = models.BooleanField()
-    email = models.EmailField()
-    password_salt = models.CharField(max_length=128)
+    email = models.EmailField(unique = True)
+    password = models.CharField(max_length=512,default = 'A')
     grid = models.ArrayModelField(Cell, default=None)
     objects = models.DjongoManager()

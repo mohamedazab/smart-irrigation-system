@@ -4,6 +4,11 @@ import json
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
+ 
+from django.conf import settings
+from django.contrib.auth.hashers import check_password,make_password
+
+
 
 from .models import Plant, User
 from bson.objectid import ObjectId
@@ -89,10 +94,24 @@ def signUp(request):
         )
         response.status_code = 300
         return response
-    
     body = json.loads(request.body)
-    # TODO: ENCRYPT PASSWORD HERE
-    # TODO: OTHER AUTH-RELATED FUNCTION IF ANY
+    #fail if no sign up information
+    if not body["password"] or not body["email"]:
+        response  = HttpResponse(
+            '''{
+                "success": false,
+                "message": "Only POST requests are allowed on this route"
+            }''',
+            content_type="application/json"
+        )
+        response.status_code = 300
+        return response
+
+
+    # ENCRYPT PASSWORD HERE
+    body["password"] = make_password(body["password"])
+    # OTHER AUTH-RELATED FUNCTION IF ANY
+    print ("password encrypted", body["password"])
     User.objects.mongo_insert(body)
     response = HttpResponse(
         '''{
@@ -104,13 +123,33 @@ def signUp(request):
     response.status_code = 200
     return response
 
+
 @csrf_exempt
 def logIn(request):
-    # Only listen to GET requests
-    if request.method != "POST":
+   # Only listen to POST requests
+    print(request.user, "blalbal")
+    if request.method != "POST" or request.body == None:
         response  = HttpResponse(
             '''{
-                "success": false, 
+                "success": false,
+                "message": "Only POST requests are allowed on this route"
+            }''',
+            content_type="application/json"
+        )
+        response.status_code = 300
+        return response
+    body = json.loads(request.body)
+   
+    if not request.session.exists(request.session.session_key):
+        request.session.create()
+    else:
+        print("logged in")
+
+    #fail if no sign up information
+    if not body["password"] or not body["email"]:
+        response  = HttpResponse(
+            '''{
+                "success": false,
                 "message": "Only POST requests are allowed on this route"
             }''',
             content_type="application/json"
@@ -118,35 +157,14 @@ def logIn(request):
         response.status_code = 300
         return response
 
-    body = json.loads(request.body)
-    # TODO: ENCRYPT PASSWORD HERE
-    # TODO: OTHER AUTH-RELATED FUNCTION IF ANY
-    user = User.objects.mongo_find_one({
-        'email': body['email'],
-        'password_salt': body['password_salt']
-    })
-    # user not found
-    if user == None:
-        response  = HttpResponse(
-            '''{
-                "success": false,
-                "message": "No such user exists. Sign up or try using another email/password."
-            }''',
-            content_type="application/json"
-        )
-        response.status_code = 400
-        return response
 
-    user = dict(user)
-    # TODO: Don't delete the _id key, turn it to a string of characters
-    del user['_id']
-    data_json = json.dumps(user)
-    # TODO: START SESSION OR ADD TOKEN HERE
+    candidate_user  = User.objects.mongo_find_one({"email":body["email"]})
+    print(body["password"]," -- ", candidate_user["password"])
+    print("candidate user", check_password(body["password"], candidate_user["password"]))
     response = HttpResponse(
         '''{
             "success": true,
-            "message": "You have successfully logged in.",
-            "data": ''' + str(data_json) + '''
+            "message": "Account created successfully"
         }''',
         content_type="application/json"
     )

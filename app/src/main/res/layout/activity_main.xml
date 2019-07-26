@@ -283,35 +283,108 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
+    <GridLayout
         android:id="@+id/test_btn_layout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginBottom="150dp"
-        android:translationX="-100dp"
+        android:orientation="horizontal"
+        android:columnCount="3"
+        android:rowCount="3"
+        android:translationY="-100dp"
+        android:translationX="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
             android:id="@+id/profile_pic"
-            android:layout_width="177dp"
-            android:layout_height="116dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:background="#00000000"
             android:onClick="Test_button"
             android:src="@mipmap/plant_default"
             android:transitionName="transition_profile_1"/>
 
+        <!--<ImageView-->
+            <!--android:id="@+id/add_plant"-->
+            <!--android:layout_width="100dp"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:background="#00000000"-->
+            <!--android:onClick="Add_plant"-->
+            <!--android:src="@drawable/ic_add_box_black_24dp" />-->
+
         <ImageView
-            android:id="@+id/add_plant"
-            android:layout_width="177dp"
-            android:layout_height="116dp"
+            android:id="@+id/add_plant2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:background="#00000000"
             android:onClick="Add_plant"
             android:src="@drawable/ic_add_box_black_24dp"
             />
-    </LinearLayout>
+
+        <ImageView
+            android:id="@+id/add_plant3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#00000000"
+            android:onClick="Add_plant"
+            android:src="@drawable/ic_add_box_black_24dp"
+            />
+
+        <ImageView
+            android:id="@+id/add_plant4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#00000000"
+            android:onClick="Add_plant"
+            android:src="@drawable/ic_add_box_black_24dp"
+            />
+
+        <ImageView
+            android:id="@+id/add_plant5"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#00000000"
+            android:onClick="Add_plant"
+            android:src="@drawable/ic_add_box_black_24dp"
+            />
+
+        <ImageView
+            android:id="@+id/add_plant6"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#00000000"
+            android:onClick="Add_plant"
+            android:src="@drawable/ic_add_box_black_24dp"
+            />
+
+        <ImageView
+            android:id="@+id/add_plant7"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#00000000"
+            android:onClick="Add_plant"
+            android:src="@drawable/ic_add_box_black_24dp"
+            />
+
+        <ImageView
+            android:id="@+id/add_plant8"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#00000000"
+            android:onClick="Add_plant"
+            android:src="@drawable/ic_add_box_black_24dp"
+            />
+
+        <ImageView
+            android:id="@+id/add_plant9"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#00000000"
+            android:onClick="Add_plant"
+            android:src="@drawable/ic_add_box_black_24dp"
+            />
+    </GridLayout>
 
     <ImageView
         android:id="@+id/bgapp"
@@ -328,51 +401,5 @@
         app:layout_constraintTop_toTopOf="parent"
         android:transitionName="transition_profile_2"
         />
-
-    <!--Old Buttons-->
-
-    <!--<Button-->
-        <!--android:id="@+id/Profiles"-->
-        <!--android:layout_width="251dp"-->
-        <!--android:layout_height="172dp"-->
-        <!--android:layout_marginLeft="8dp"-->
-        <!--android:layout_marginTop="8dp"-->
-        <!--android:layout_marginRight="8dp"-->
-        <!--android:layout_marginBottom="8dp"-->
-        <!--android:background="#000"-->
-        <!--android:drawableTop="@mipmap/plant2"-->
-        <!--android:drawablePadding="-20dip"-->
-        <!--android:gravity="center"-->
-        <!--android:onClick="OpenProfiles"-->
-        <!--android:padding="40dip"-->
-        <!--android:text="Profiles"-->
-        <!--android:textColor="#fff"-->
-        <!--android:textStyle="bold"-->
-        <!--app:layout_constraintBottom_toTopOf="@+id/Temp"-->
-        <!--app:layout_constraintLeft_toLeftOf="@+id/Temp"-->
-        <!--app:layout_constraintRight_toRightOf="@+id/Temp"-->
-        <!--app:layout_constraintTop_toTopOf="parent"-->
-        <!--app:layout_constraintVertical_bias="0.848" />-->
-
-    <!--<Button-->
-        <!--android:id="@+id/Temp"-->
-        <!--android:layout_width="162dp"-->
-        <!--android:layout_height="166dp"-->
-        <!--android:layout_marginBottom="77dp"-->
-        <!--android:layout_marginLeft="8dp"-->
-        <!--android:layout_marginRight="8dp"-->
-        <!--android:background="#000"-->
-        <!--android:drawablePadding="-20dip"-->
-        <!--android:drawableTop="@mipmap/camera"-->
-        <!--android:gravity="center"-->
-        <!--android:padding="40dip"-->
-        <!--android:text="Add Plant"-->
-        <!--android:textColor="#fff"-->
-        <!--android:textStyle="bold"-->
-        <!--app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--app:layout_constraintHorizontal_bias="0.51"-->
-        <!--app:layout_constraintLeft_toLeftOf="parent"-->
-        <!--app:layout_constraintRight_toRightOf="parent"-->
-        <!--tools:layout_editor_absoluteY="268dp" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

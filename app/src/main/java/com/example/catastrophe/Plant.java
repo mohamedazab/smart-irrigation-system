@@ -9,51 +9,18 @@ import android.graphics.drawable.Icon;
 public class Plant {
 
     private Icon icon;
+    private String id;
     private String name;
-    private int size;
-    private int moistureLevel;
-    private String timeToWater;
-    private String info;
+    private double moisture_threshold;
+    private double recommended_ph;
+    private double recommended_temperature;
 
-    public Plant(Icon icon, String name, int size, int moistureLevel, String timeToWater, String info){
+    public Plant(Icon icon,String id,String name,double moisture_threshold,double recommended_ph,double recommended_temperature){
         this.icon = icon;
+        this.id = id;
         this.name = name;
-        this.size = size;
-        this.moistureLevel = moistureLevel;
-        this.timeToWater = timeToWater;
-        this.info = info;
-    }
-
-    public Plant(String name, int size, int moistureLevel, String timeToWater, String info){
-        this.icon = null;
-        this.name = name;
-        this.size = size;
-        this.moistureLevel = moistureLevel;
-        this.timeToWater = timeToWater;
-        this.info = info;
-    }
-
-    public Icon getIcon(){
-        return icon;
-    }
-
-    public String getName(){
-        return name;
-    }
-
-    public int getSize(){
-        return size;
-    }
-
-    public int getMoistureLevel(){
-        return moistureLevel;
-    }
-
-    public String getTimeToWater(){
-        return timeToWater;
-    }
-
-    public String getInfo(){
-        return info;
+        this.moisture_threshold = moisture_threshold;
+        this.recommended_ph = recommended_ph;
+        this.recommended_temperature = recommended_temperature;
     }
 }

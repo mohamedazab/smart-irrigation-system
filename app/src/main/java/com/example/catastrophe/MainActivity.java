@@ -13,6 +13,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -30,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView bgapp,clover,test_btn,profile_pic;
     Animation bganim,clovernim,frombottom,fromup;
-    LinearLayout textsplash,texthome,menus,login_signup_form,test_btn_layout;
+    LinearLayout textsplash,texthome,menus,login_signup_form;
+    GridLayout test_btn_layout;
     Button login_tab,signup_tab,login_btn,signup_btn;
     EditText input_email,input_password;
 
@@ -48,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         texthome = (LinearLayout) findViewById(R.id.texthome);
         texthome.setAlpha(0);
         login_signup_form = (LinearLayout) findViewById(R.id.login_signup_form);
-        test_btn_layout = (LinearLayout) findViewById(R.id.test_btn_layout);
+        test_btn_layout = (GridLayout) findViewById(R.id.test_btn_layout);
 //        menus = (LinearLayout) findViewById(R.id.menus);
 
         login_tab = (Button) findViewById(R.id.logintab);

@@ -1,11 +1,14 @@
 package com.example.catastrophe;
 
+import android.annotation.SuppressLint;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.util.Pair;
 import android.view.Gravity;
 import android.view.View;
@@ -32,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView bgapp,clover,test_btn,profile_pic;
     Animation bganim,clovernim,frombottom,fromup;
     LinearLayout textsplash,texthome,menus,login_signup_form;
-    GridLayout test_btn_layout;
+    GridLayout grid_3;
     Button login_tab,signup_tab,login_btn,signup_btn;
     EditText input_email,input_password;
 
@@ -50,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         texthome = (LinearLayout) findViewById(R.id.texthome);
         texthome.setAlpha(0);
         login_signup_form = (LinearLayout) findViewById(R.id.login_signup_form);
-        test_btn_layout = (GridLayout) findViewById(R.id.test_btn_layout);
+        grid_3 = (GridLayout) findViewById(R.id.grid_3);
 //        menus = (LinearLayout) findViewById(R.id.menus);
 
         login_tab = (Button) findViewById(R.id.logintab);
@@ -108,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
             clover.animate().translationX(-300).alpha(0).setDuration(800);
             texthome.setAlpha(1);
             texthome.startAnimation(frombottom);
-            test_btn_layout.startAnimation(frombottom);
+            grid_3.startAnimation(frombottom);
             textsplash.animate().translationY(140).alpha(0).setDuration(800);
             login_signup_form.animate().translationY(-2250).alpha(0).setDuration(800);
 
@@ -152,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    public void Test_button(View view){
+    public void View_plant(View view){
 //        test_btn.setVisibility(View.GONE);
 //        bgapp.animate().translationYBy(200).setDuration(800);
 //        texthome.animate().translationYBy(-200).alpha(0).setDuration(800);
@@ -166,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        }, 1200);
         Pair[] pairs = new Pair[2];
-        pairs[0] = new Pair<View,String>(profile_pic,"transition_profile_1");
+        pairs[0] = new Pair<View,String>(view,"transition_profile_1");
         pairs[1] = new Pair<View,String>(bgapp,"transition_profile_2");
 
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this
@@ -185,6 +188,20 @@ public class MainActivity extends AppCompatActivity {
                 ,pairs);
 
         startActivity(intent,options.toBundle());
+    }
+
+    @SuppressLint("NewApi")
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void Add_Or_View_Plant(View view){
+        Log.d("Image1", ((ImageView)view).getDrawable().getCurrent().toString());
+        Log.d("Image2", getDrawable(R.drawable.ic_add_box_black_24dp).getCurrent().toString());
+
+        if (((ImageView)view).getDrawable().isFilterBitmap() == false){
+            Add_plant(view);
+        }
+        else{
+            View_plant(view);
+        }
     }
 
 

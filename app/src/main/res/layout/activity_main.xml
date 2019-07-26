@@ -284,7 +284,7 @@
     </LinearLayout>
 
     <GridLayout
-        android:id="@+id/test_btn_layout"
+        android:id="@+id/grid_3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -297,92 +297,93 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
-            android:id="@+id/profile_pic"
+            android:id="@+id/cell00"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#00000000"
-            android:onClick="Test_button"
+            android:onClick="Add_Or_View_Plant"
             android:src="@mipmap/plant_default"
             android:transitionName="transition_profile_1"/>
 
-        <!--<ImageView-->
-            <!--android:id="@+id/add_plant"-->
-            <!--android:layout_width="100dp"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:background="#00000000"-->
-            <!--android:onClick="Add_plant"-->
-            <!--android:src="@drawable/ic_add_box_black_24dp" />-->
 
         <ImageView
-            android:id="@+id/add_plant2"
+            android:id="@+id/cell01"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#00000000"
-            android:onClick="Add_plant"
+            android:onClick="Add_Or_View_Plant"
             android:src="@drawable/ic_add_box_black_24dp"
+            android:transitionName="transition_profile_1"
             />
 
         <ImageView
-            android:id="@+id/add_plant3"
+            android:id="@+id/cell02"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#00000000"
-            android:onClick="Add_plant"
+            android:onClick="Add_Or_View_Plant"
             android:src="@drawable/ic_add_box_black_24dp"
+            android:transitionName="transition_profile_1"
             />
 
         <ImageView
-            android:id="@+id/add_plant4"
+            android:id="@+id/cell10"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#00000000"
-            android:onClick="Add_plant"
+            android:onClick="Add_Or_View_Plant"
             android:src="@drawable/ic_add_box_black_24dp"
+            android:transitionName="transition_profile_1"
             />
 
         <ImageView
-            android:id="@+id/add_plant5"
+            android:id="@+id/cell11"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#00000000"
-            android:onClick="Add_plant"
+            android:onClick="Add_Or_View_Plant"
             android:src="@drawable/ic_add_box_black_24dp"
+            android:transitionName="transition_profile_1"
             />
 
         <ImageView
-            android:id="@+id/add_plant6"
+            android:id="@+id/cell12"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#00000000"
-            android:onClick="Add_plant"
+            android:onClick="Add_Or_View_Plant"
             android:src="@drawable/ic_add_box_black_24dp"
+            android:transitionName="transition_profile_1"
             />
 
         <ImageView
-            android:id="@+id/add_plant7"
+            android:id="@+id/cell20"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#00000000"
-            android:onClick="Add_plant"
+            android:onClick="Add_Or_View_Plant"
             android:src="@drawable/ic_add_box_black_24dp"
+            android:transitionName="transition_profile_1"
             />
 
         <ImageView
-            android:id="@+id/add_plant8"
+            android:id="@+id/cell21"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#00000000"
-            android:onClick="Add_plant"
+            android:onClick="Add_Or_View_Plant"
             android:src="@drawable/ic_add_box_black_24dp"
+            android:transitionName="transition_profile_1"
             />
 
         <ImageView
-            android:id="@+id/add_plant9"
+            android:id="@+id/cell22"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#00000000"
-            android:onClick="Add_plant"
+            android:onClick="Add_Or_View_Plant"
             android:src="@drawable/ic_add_box_black_24dp"
+            android:transitionName="transition_profile_1"
             />
     </GridLayout>
 

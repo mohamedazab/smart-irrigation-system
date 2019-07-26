@@ -5,5 +5,5 @@
   - CircleCI
   - Dockerhub
 ```
-docker pull mohamedazab/django-ci-demo
+docker pull mohamedazab/cfc-irrigation-system
 ```

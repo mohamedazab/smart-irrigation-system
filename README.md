@@ -1,4 +1,4 @@
-# Circle-ci-demo [![CircleCI](https://circleci.com/gh/mohamedazab/Circle-ci-demo/tree/master.svg?style=svg)](https://circleci.com/gh/mohamedazab/Circle-ci-demo/tree/master)
+# Circle-ci-demo [![CircleCI](https://circleci.com/gh/mohamedazab/cfc-smart-irrigation.svg?style=svg)](https://circleci.com/gh/mohamedazab/cfc-smart-irrigation)
 
 ## Web server with Django
 ### Integrated features:

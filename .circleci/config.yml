@@ -40,7 +40,7 @@ jobs:
           destination: test-reports
   build:
     environment:
-      IMAGE_NAME: mohamedazab/django-ci-demo
+      IMAGE_NAME: mohamedazab/cfc-irrigation-system
     docker:
      
       - image: circleci/python:3.6.1

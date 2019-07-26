@@ -11,16 +11,18 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+load_dotenv()
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '4tg-&!5)aof=7qr5gva#_l!k9sqg5m5=s08uyzhx^9%m0nt81n'
+SECRET_KEY = os.getenv('sk')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -80,8 +82,8 @@ DATABASES = {
         'ENFORCE_SCHEMA': True,
         'NAME': 'cfc-irrigation-system',
         'HOST': 'mongodb+srv://cfc-user:cfc-user@cfc-irrigation-system-cacsb.mongodb.net/test?retryWrites=true&w=majority',
-        'USER': 'cfc-user',
-        'PASSWORD': 'cfc-user',
+        'USER':  os.getenv('db_user'),
+        'PASSWORD':  os.getenv('db_password'),
     }
 }
 

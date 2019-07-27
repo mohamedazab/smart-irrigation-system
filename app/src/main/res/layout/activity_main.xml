@@ -298,6 +298,7 @@
 
         <ImageView
             android:id="@+id/cell00"
+            android:tag="00"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#00000000"
@@ -308,6 +309,7 @@
 
         <ImageView
             android:id="@+id/cell01"
+            android:tag="01"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#00000000"
@@ -318,6 +320,7 @@
 
         <ImageView
             android:id="@+id/cell02"
+            android:tag="02"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#00000000"
@@ -328,6 +331,7 @@
 
         <ImageView
             android:id="@+id/cell10"
+            android:tag="10"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#00000000"
@@ -338,6 +342,7 @@
 
         <ImageView
             android:id="@+id/cell11"
+            android:tag="11"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#00000000"
@@ -348,6 +353,7 @@
 
         <ImageView
             android:id="@+id/cell12"
+            android:tag="12"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#00000000"
@@ -358,6 +364,7 @@
 
         <ImageView
             android:id="@+id/cell20"
+            android:tag="20"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#00000000"
@@ -368,6 +375,7 @@
 
         <ImageView
             android:id="@+id/cell21"
+            android:tag="21"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#00000000"
@@ -378,6 +386,7 @@
 
         <ImageView
             android:id="@+id/cell22"
+            android:tag="22"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#00000000"

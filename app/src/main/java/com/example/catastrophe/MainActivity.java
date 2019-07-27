@@ -27,16 +27,25 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.Header;
+import com.android.volley.Network;
+import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.HttpClientStack;
+import com.android.volley.toolbox.HttpStack;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.net.CookieHandler;
+import java.net.CookieManager;
+import java.net.CookiePolicy;
+import java.net.CookieStore;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,14 +75,12 @@ public class MainActivity extends AppCompatActivity {
         texthome.setAlpha(0);
         login_signup_form = (LinearLayout) findViewById(R.id.login_signup_form);
         grid_3 = (GridLayout) findViewById(R.id.grid_3);
-//        menus = (LinearLayout) findViewById(R.id.menus);
 
         login_tab = (Button) findViewById(R.id.logintab);
         signup_tab = (Button) findViewById(R.id.signuptab);
         login_btn = (Button) findViewById(R.id.btn_login);
         signup_btn = (Button) findViewById(R.id.btn_signup);
-//        test_btn = (Button) findViewById(R.id.test_btn);
-//        test_btn = (ImageView) findViewById(R.id.test_btn);
+
 
         input_email = (EditText) findViewById(R.id.input_email);
         input_password = (EditText) findViewById(R.id.input_password);
@@ -89,66 +96,40 @@ public class MainActivity extends AppCompatActivity {
         login_tab.setClickable(false);
         signup_tab.setBackgroundColor(Color.argb(0,0,0,0));
         login_tab.setBackgroundColor(Color.argb(15,255,0,0));
+        grid_3.setVisibility(View.GONE);
 
+        CookieManager cookieManager = new CookieManager(null,CookiePolicy.ACCEPT_ALL);
+        CookieHandler.setDefault(cookieManager);
 
-//        bgapp.animate().translationY(-2250).setDuration(800).setStartDelay(800);
-//        clover.animate().translationX(-300).alpha(0).setDuration(800).setStartDelay(800);
-//        textsplash.animate().translationY(140).alpha(0).setDuration(800).setStartDelay(800);
-//        texthome.startAnimation(frombottom);
-//        menus.startAnimation(frombottom);
-
-//        ((TextView)getWindow().getDecorView().findViewById(android.R.id.title)).setGravity(Gravity.CENTER);
         mQueue = Volley.newRequestQueue(this);
-    }
-
-    boolean Validate(String email,String password){
-        //Check with the backend
-        // TODO: 7/23/2019
-
-        return true;
-    }
-
-    void AddToDatabase(String email, String password){
-        //Add this user to the database
-        // TODO: 7/23/2019
     }
 
     public void Login(View view){
         String email = input_email.getText().toString();
         String password = input_password.getText().toString();
 
-//        boolean valid = Validate(email,password);
-//
-//        if (valid){
-//            //animate the scene
-//            bgapp.animate().translationY(-2250).setDuration(800);
-//            clover.animate().translationX(-300).alpha(0).setDuration(800);
-//            texthome.setAlpha(1);
-//            texthome.startAnimation(frombottom);
-//            grid_3.startAnimation(frombottom);
-//            textsplash.animate().translationY(140).alpha(0).setDuration(800);
-//            login_signup_form.animate().translationY(-2250).alpha(0).setDuration(800);
-//
-//        }
-//        else{
-//            Toast toast = Toast.makeText(getApplicationContext(),"Wrong Email or Password",Toast.LENGTH_SHORT);
-//            toast.setMargin(0,0.6f);
-//            toast.show();
-//        }
+        String url = "http://192.168.1.7:8000/api/login";
 
-        String url = "http://www.mocky.io/v2/5d3c07b030000018a4a2a19a";
+        JSONObject postparams = new JSONObject();
+        try {
+            postparams.put("email", email);
+            postparams.put("password", password);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, postparams,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         Boolean result = false;
+                        Log.d("Login",response.toString());
                         try {
-                            result = response.getBoolean("response");
+                            result = response.getBoolean("success");
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                        if (result){
+                        if (result) {
                             LoginSuccess();
                         }else{
                             LoginFailure();
@@ -158,8 +139,13 @@ public class MainActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Log.d("Login","Failure");
-                        error.printStackTrace();
+                        Log.d("Login",error.networkResponse.toString());
+                        if (error.networkResponse.statusCode >= 300){
+                            Log.d("Login",error.networkResponse.statusCode + "");
+                            LoginFailure();
+                        }else {
+                            error.printStackTrace();
+                        }
                     }
                 });
         mQueue.add(request);
@@ -174,6 +160,7 @@ public class MainActivity extends AppCompatActivity {
         grid_3.startAnimation(frombottom);
         textsplash.animate().translationY(140).alpha(0).setDuration(800);
         login_signup_form.animate().translationY(-2250).alpha(0).setDuration(800);
+        grid_3.setVisibility(View.VISIBLE);
     }
 
     public void LoginFailure(){
@@ -186,14 +173,45 @@ public class MainActivity extends AppCompatActivity {
         String email = input_email.getText().toString();
         String password = input_password.getText().toString();
 
-        AddToDatabase(email,password);
+        String url = "http://192.168.1.7:8000/api/sign-up";
 
-        //if sign up was successful
-        Toast toast = Toast.makeText(getApplicationContext(),"Sign Up Successful",Toast.LENGTH_SHORT);
-        toast.setMargin(0,0.6f);
-        toast.show();
+        JSONObject postparams = new JSONObject();
+        try {
+            postparams.put("email", email);
+            postparams.put("password", password);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
-        Login_tab(view);
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, postparams,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Boolean result = false;
+                        try {
+                            result = response.getBoolean("success");
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        if (result){
+                            Toast toast = Toast.makeText(getApplicationContext(),"Sign Up Successful",Toast.LENGTH_SHORT);
+                            toast.setMargin(0,0.6f);
+                            toast.show();
+                            Login_tab(login_tab);
+                        }else{
+                            Toast toast = Toast.makeText(getApplicationContext(),"Sign Up Failure",Toast.LENGTH_SHORT);
+                            toast.setMargin(0,0.6f);
+                            toast.show();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        error.printStackTrace();
+                    }
+                });
+        mQueue.add(request);
     }
 
     public void Login_tab(View view){
@@ -240,6 +258,8 @@ public class MainActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void Add_plant(View view){
         Intent intent = new Intent(this, AddPlantActivity.class);
+        intent.putExtra("position",view.getTag().toString());
+        Log.d("Add",view.getTag().toString());
         Pair[] pairs = new Pair[1];
         pairs[0] = new Pair<View,String>(bgapp,"transition_profile_2");
 

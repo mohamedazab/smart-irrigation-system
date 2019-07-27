@@ -6,6 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -16,28 +17,77 @@ import android.view.View.OnKeyListener;
 import android.view.KeyEvent;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class AddPlantActivity extends AppCompatActivity {
 
     EditText plant_name;
+    int positionx;
+    int positiony;
+
+    private RequestQueue mQueue;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_plant_options);
         plant_name = (EditText) findViewById(R.id.plant_name_from_user);
+        mQueue = Volley.newRequestQueue(this);
+
+        positionx = getIntent().getStringExtra("position").charAt(0);
+        positiony = getIntent().getStringExtra("position").charAt(1);
 
         plant_name.setOnKeyListener(new OnKeyListener() {
             @Override
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
                 if((keyEvent.getAction() == KeyEvent.ACTION_DOWN ) && (i == KeyEvent.KEYCODE_ENTER)){
                     // TODO: 7/25/2019 send the name of the plant to the backend
-                    Toast toast = Toast.makeText(getApplicationContext(),"Plant "+ plant_name.getText().toString() +" added successfully",Toast.LENGTH_SHORT);
-                    toast.setMargin(0,0.6f);
-                    toast.show();
+                    String url = "http://192.168.1.7:8000/api/user/add";
+
+                    JSONObject postparams = new JSONObject();
+                    try {
+                        postparams.put("positionX", positionx);
+                        postparams.put("positionY", positiony);
+                        postparams.put("plant_name", plant_name.getText().toString());
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    JsonObjectRequest request = new JsonObjectRequest(Request.Method.PUT, url, postparams,
+                            new Response.Listener<JSONObject>() {
+                                @Override
+                                public void onResponse(JSONObject response) {
+                                    Toast toast = Toast.makeText(getApplicationContext(),"Plant "+ plant_name.getText().toString() + " added successfully",Toast.LENGTH_SHORT);
+                                    toast.setMargin(0,0.6f);
+                                    toast.show();
+                                }
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    Log.d("Add plant",error.networkResponse.statusCode+"");
+                                    Toast toast = Toast.makeText(getApplicationContext(),"Failed to add Plant "+ plant_name.getText().toString(),Toast.LENGTH_SHORT);
+                                    toast.setMargin(0,0.6f);
+                                    toast.show();
+                                    error.printStackTrace();
+                                }
+                            });
+                    mQueue.add(request);
+                    return true;
+                }else {
+                    return false;
                 }
-                return false;
             }
         });
+
     }
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)

@@ -11,6 +11,7 @@ from django.contrib.sessions.models import Session
 from .models import Plant, User
 from bson.objectid import ObjectId
 
+import pprint
 
 @csrf_exempt
 def createPlant(request):
@@ -77,23 +78,26 @@ def signUp(request):
         response_code = 300
         return formulateResponse(response_message, response_success, response_code)
 
-    # ENCRYPT PASSWORD HERE
     body["password"] = make_password(body["password"])
-    # OTHER AUTH-RELATED FUNCTION IF ANY
-    User.objects.mongo_insert(body)
+    tmp_user = {
+        'email': body['email'],
+        'password': body['password'],
+        'premium': False,
+        'grid': []
+    }
+    User.objects.mongo_insert(tmp_user)
 
     return formulateResponse(response_message, response_success, response_code)
 
 
 @csrf_exempt
 def logIn(request):
-    # Session.objects.all().delete()
-   # response attributes
+    # response attributes
     response_message = "login successful"
     response_success = True
     response_code = 200
     print(request.session.session_key)
-   # Only listen to POST requests
+    # Only listen to POST requests
     if request.method != "POST" or request.body == None:
         response_success = False
         response_message = "Only POST requests are allowed on this route"
@@ -102,12 +106,16 @@ def logIn(request):
 
     if request.session.exists(request.session.session_key):
         # validate and obtain user info from session
-        user = session_validation(request.session.session_key)
-        print("user: ", user)
+        user_email = session_validation(request.session.session_key)
+        print("user: ", user_email)
         response_message = "already logged in user"
         response_success = False
         response_code = 300
-        return formulateResponse(response_message, response_success, response_code)
+        candidate_user = User.objects.mongo_find_one({"email": user_email})
+        candidate_user = dict(candidate_user)
+        del candidate_user['_id']
+        del candidate_user['password']
+        return formulateResponse(response_message, response_success, response_code, candidate_user)
 
     # load body
     body = json.loads(request.body)
@@ -121,6 +129,7 @@ def logIn(request):
 
     # get user from DB
     candidate_user = User.objects.mongo_find_one({"email": body["email"]})
+    candidate_user = dict(candidate_user)
 
     if candidate_user is None:
         response_success = False
@@ -135,24 +144,7 @@ def logIn(request):
         request.session.create()
         request.session["user_email"] = body["email"]
 
-    return formulateResponse(response_message, response_success, response_code)
-
-# returns a user for the current session
-
-
-def session_validation(session_key):
-
-    session = Session.objects.filter(session_key=session_key)
-    print("the sessions\n", session, type(session))
-    if len(session) < 1:
-        return None
-    session_data = session[0].get_decoded()
-    print("data", session_data)
-    if "user_email" not in session_data:
-        print("empty session data")
-        return None
-    return session_data['user_email']
-
+    return formulateResponse(response_message, response_success, response_code, candidate_user)
 
 @csrf_exempt
 def addPlantToGrid(request):
@@ -163,23 +155,42 @@ def addPlantToGrid(request):
         response_code = 300
         return formulateResponse(response_message, response_success, response_code)
 
-    # TODO: Check if logged in.
-    # TODO: Get USER from session.
+    user_email = session_validation(request.session.session_key)
+    if user_email is None:
+        response_success = False
+        response_message = "Internal server error. Session was not found."
+        response_code = 500
+        return formulateResponse(response_message, response_success, response_code)
 
-    plant = Plant.objects.mongo_find_one({'name': request.body['plant_name']})
+    user = User.objects.mongo_find_one({'email': user_email})
+    user = dict(user)
+
+    body = json.loads(request.body)
+
+    plant = Plant.objects.mongo_find_one({'name': body['plant_name']})
     # Plant not found
-    if plant == None:
+    if plant is None:
         response_success = False
         response_message = "No such plant exists"
         response_code = 300
         return formulateResponse(response_message, response_success, response_code)
-
-    # TODO: Add plant to grid
-    # TODO: Upsert/Update user in collection
+    
+    plant = dict(plant)
+    del plant['_id']
+    tmp_cell = {
+        'positionX': body['positionX'],
+        'positionY': body['positionY'],
+        'crop': plant,
+        'current_moisture': plant['moisture_threshold']
+    }
+    user['grid'].append(tmp_cell)
+    User.objects.mongo_update_one({'_id': user['_id']}, {'$set': user}, upsert=False)
+    del user['_id']
+    del user['password']
     response_success = True
     response_message = "User updated successfully"
     response_code = 200
-    return formulateResponse(response_message, response_success, response_code)
+    return formulateResponse(response_message, response_success, response_code, user)
 
 
 def formulateResponse(message, success, code, data=None):
@@ -195,3 +206,17 @@ def formulateResponse(message, success, code, data=None):
 
     response.status_code = code
     return response
+
+# returns a user for the current session
+def session_validation(session_key):
+
+    session = Session.objects.filter(session_key=session_key)
+    # print("the sessions\n", session, type(session))
+    if len(session) < 1:
+        return None
+    session_data = session[0].get_decoded()
+    # print("data", session_data)
+    if "user_email" not in session_data:
+        # print("empty session data")
+        return None
+    return session_data['user_email']

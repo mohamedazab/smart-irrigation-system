@@ -15,6 +15,8 @@ class Cell(models.Model):
         on_delete=models.DO_NOTHING
     )
     current_moisture = models.FloatField()
+    class Meta:
+        abstract = True
 
 class User(models.Model):
     premium = models.BooleanField()

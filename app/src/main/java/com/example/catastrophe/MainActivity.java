@@ -27,6 +27,16 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
     GridLayout grid_3;
     Button login_tab,signup_tab,login_btn,signup_btn;
     EditText input_email,input_password;
+
+    private RequestQueue mQueue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,11 +98,13 @@ public class MainActivity extends AppCompatActivity {
 //        menus.startAnimation(frombottom);
 
 //        ((TextView)getWindow().getDecorView().findViewById(android.R.id.title)).setGravity(Gravity.CENTER);
+        mQueue = Volley.newRequestQueue(this);
     }
 
     boolean Validate(String email,String password){
         //Check with the backend
         // TODO: 7/23/2019
+
         return true;
     }
 
@@ -103,24 +117,69 @@ public class MainActivity extends AppCompatActivity {
         String email = input_email.getText().toString();
         String password = input_password.getText().toString();
 
-        boolean valid = Validate(email,password);
+//        boolean valid = Validate(email,password);
+//
+//        if (valid){
+//            //animate the scene
+//            bgapp.animate().translationY(-2250).setDuration(800);
+//            clover.animate().translationX(-300).alpha(0).setDuration(800);
+//            texthome.setAlpha(1);
+//            texthome.startAnimation(frombottom);
+//            grid_3.startAnimation(frombottom);
+//            textsplash.animate().translationY(140).alpha(0).setDuration(800);
+//            login_signup_form.animate().translationY(-2250).alpha(0).setDuration(800);
+//
+//        }
+//        else{
+//            Toast toast = Toast.makeText(getApplicationContext(),"Wrong Email or Password",Toast.LENGTH_SHORT);
+//            toast.setMargin(0,0.6f);
+//            toast.show();
+//        }
 
-        if (valid){
-            //animate the scene
-            bgapp.animate().translationY(-2250).setDuration(800);
-            clover.animate().translationX(-300).alpha(0).setDuration(800);
-            texthome.setAlpha(1);
-            texthome.startAnimation(frombottom);
-            grid_3.startAnimation(frombottom);
-            textsplash.animate().translationY(140).alpha(0).setDuration(800);
-            login_signup_form.animate().translationY(-2250).alpha(0).setDuration(800);
+        String url = "http://www.mocky.io/v2/5d3c07b030000018a4a2a19a";
 
-        }
-        else{
-            Toast toast = Toast.makeText(getApplicationContext(),"Wrong Email or Password",Toast.LENGTH_SHORT);
-            toast.setMargin(0,0.6f);
-            toast.show();
-        }
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Boolean result = false;
+                        try {
+                            result = response.getBoolean("response");
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        if (result){
+                            LoginSuccess();
+                        }else{
+                            LoginFailure();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.d("Login","Failure");
+                        error.printStackTrace();
+                    }
+                });
+        mQueue.add(request);
+    }
+
+    public void LoginSuccess(){
+        Log.d("Login","Success");
+        bgapp.animate().translationY(-2250).setDuration(800);
+        clover.animate().translationX(-300).alpha(0).setDuration(800);
+        texthome.setAlpha(1);
+        texthome.startAnimation(frombottom);
+        grid_3.startAnimation(frombottom);
+        textsplash.animate().translationY(140).alpha(0).setDuration(800);
+        login_signup_form.animate().translationY(-2250).alpha(0).setDuration(800);
+    }
+
+    public void LoginFailure(){
+        Toast toast = Toast.makeText(getApplicationContext(),"Wrong Email or Password",Toast.LENGTH_SHORT);
+        toast.setMargin(0,0.6f);
+        toast.show();
     }
 
     public void SignUp(View view){

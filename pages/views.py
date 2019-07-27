@@ -139,6 +139,8 @@ def log_in(request):
     else:  # login granted
         print("creating new session")
         candidate_user = dict(candidate_user)
+        del candidate_user['_id']
+        del candidate_user['password']
         request.session.create()
         request.session["user_email"] = body["email"]
 

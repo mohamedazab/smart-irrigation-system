@@ -127,7 +127,6 @@ def log_in(request):
 
     # get user from DB
     candidate_user = User.objects.mongo_find_one({"email": body["email"]})
-    candidate_user = dict(candidate_user)
 
     if candidate_user is None:
         response_success = False
@@ -139,6 +138,7 @@ def log_in(request):
         response_code = 300
     else:  # login granted
         print("creating new session")
+        candidate_user = dict(candidate_user)
         request.session.create()
         request.session["user_email"] = body["email"]
 

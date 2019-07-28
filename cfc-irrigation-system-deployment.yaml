@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yml
+    kompose.version: 1.16.0 (0c01309)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: cfc-irrigation-system
+  name: cfc-irrigation-system
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: cfc-irrigation-system
+    spec:
+      containers:
+      - args:
+        - python
+        - manage.py
+        - runserver
+        - 0.0.0.0:8000
+        image: cfc-irrigation-system
+        name: cfc-irrigation-system
+        ports:
+        - containerPort: 8000
+        resources: {}
+      restartPolicy: Always
+status: {}

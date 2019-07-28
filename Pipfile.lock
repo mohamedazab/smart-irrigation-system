@@ -22,7 +22,7 @@
                 "sha256:a2814bffd1f007805b19194eb0b9a331933b82bd5da1c3ba3d7b7ba16e06dc4b"
             ],
             "index": "pypi",
-            "version": "==2.2.0"
+            "version": "==2.2.3"
         },
         "pytz": {
             "hashes": [

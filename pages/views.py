@@ -192,12 +192,11 @@ def set_current_moisture(request):
     # Load body
     body = json.loads(request.body)
 
-    if not body['email'] or not body['positionX'] \
-        or not body['positionY'] or not body['password'] or not body['current_moisture']:
+    if 'email' not in body or 'positionX' not in body or 'positionY' not in body\
+                            or 'password' not in body or 'current_moisture' not in body:
         response_message = "Missing required plant or grid information."
         response_code = 400
         return formulate_response(response_message, response_code)
-
 
     email = body['email']
     password = body['password']

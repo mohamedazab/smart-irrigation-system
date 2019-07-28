@@ -303,7 +303,7 @@
             android:layout_height="100dp"
             android:background="#00000000"
             android:onClick="Add_Or_View_Plant"
-            android:src="@mipmap/plant_default"
+            android:src="@drawable/ic_add_box_black_24dp"
             android:transitionName="transition_profile_1"/>
 
 

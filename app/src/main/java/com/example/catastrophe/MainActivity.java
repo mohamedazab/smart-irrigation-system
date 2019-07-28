@@ -12,6 +12,7 @@ import android.util.Log;
 import android.util.Pair;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -39,6 +40,7 @@ import com.android.volley.toolbox.HttpStack;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -57,9 +59,11 @@ public class MainActivity extends AppCompatActivity {
     GridLayout grid_3;
     Button login_tab,signup_tab,login_btn,signup_btn;
     EditText input_email,input_password;
+    Plant[][] grid;
 
     private RequestQueue mQueue;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,16 +94,32 @@ public class MainActivity extends AppCompatActivity {
         frombottom = AnimationUtils.loadAnimation(this,R.anim.frombottom);
         fromup = AnimationUtils.loadAnimation(this,R.anim.fromup);
 
-        signup_btn.setVisibility(View.GONE);
-        login_btn.setVisibility(View.VISIBLE);
-        signup_tab.setClickable(true);
-        login_tab.setClickable(false);
-        signup_tab.setBackgroundColor(Color.argb(0,0,0,0));
-        login_tab.setBackgroundColor(Color.argb(15,255,0,0));
-        grid_3.setVisibility(View.GONE);
+        if(getIntent().getBooleanExtra("refresh",false) == false) {
 
-        CookieManager cookieManager = new CookieManager(null,CookiePolicy.ACCEPT_ALL);
-        CookieHandler.setDefault(cookieManager);
+            signup_btn.setVisibility(View.GONE);
+            login_btn.setVisibility(View.VISIBLE);
+            signup_tab.setClickable(true);
+            login_tab.setClickable(false);
+            signup_tab.setBackgroundColor(Color.argb(0, 0, 0, 0));
+            login_tab.setBackgroundColor(Color.argb(15, 255, 0, 0));
+            grid_3.setVisibility(View.GONE);
+
+            CookieManager cookieManager = new CookieManager(null, CookiePolicy.ACCEPT_ALL);
+            CookieHandler.setDefault(cookieManager);
+        }else{
+            bgapp.setTranslationY(-2250);
+            clover.setTranslationX(-300);
+            texthome.setAlpha(1);
+            grid_3.setVisibility(View.VISIBLE);
+            textsplash.setAlpha(0);
+            login_signup_form.setAlpha(0);
+            login_signup_form.setTranslationY(-2250);
+            try {
+                RefreshGrid(new JSONObject(getIntent().getStringExtra("data")));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
 
         mQueue = Volley.newRequestQueue(this);
     }
@@ -108,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
         String email = input_email.getText().toString();
         String password = input_password.getText().toString();
 
-        String url = "http://192.168.1.7:8000/api/login";
+        String url = "http://159.122.174.163:31175/api/login";
 
         JSONObject postparams = new JSONObject();
         try {
@@ -120,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, postparams,
                 new Response.Listener<JSONObject>() {
+                    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
                     @Override
                     public void onResponse(JSONObject response) {
                         Boolean result = false;
@@ -131,6 +152,11 @@ public class MainActivity extends AppCompatActivity {
                         }
                         if (result) {
                             LoginSuccess();
+                            try {
+                                RefreshGrid(response.getJSONObject("data"));
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
                         }else{
                             LoginFailure();
                         }
@@ -173,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
         String email = input_email.getText().toString();
         String password = input_password.getText().toString();
 
-        String url = "http://192.168.1.7:8000/api/sign-up";
+        String url = "http://159.122.174.163:31175/api/sign-up";
 
         JSONObject postparams = new JSONObject();
         try {
@@ -245,6 +271,15 @@ public class MainActivity extends AppCompatActivity {
 //                startActivity(intent);
 //            }
 //        }, 1200);
+
+        int posX ;
+        posX = Character.getNumericValue(view.getTag().toString().charAt(0));
+        int posY ;
+        posY = Character.getNumericValue(view.getTag().toString().charAt(1));
+        intent.putExtra("name",grid[posX][posY].name);
+        intent.putExtra("moisture_threshold",grid[posX][posY].moisture_threshold);
+        intent.putExtra("recommended_ph",grid[posX][posY].recommended_ph);
+        intent.putExtra("recommended_temperature",grid[posX][posY].recommended_temperature);
         Pair[] pairs = new Pair[2];
         pairs[0] = new Pair<View,String>(view,"transition_profile_1");
         pairs[1] = new Pair<View,String>(bgapp,"transition_profile_2");
@@ -283,11 +318,44 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    void RefreshGrid(JSONObject response){
+        grid = new Plant[3][3];
+        try {
+            JSONArray plants = response.getJSONArray("grid");
+            if(plants.length() != 0) {
+                for (int i = 0; i < plants.length(); i++) {
+                    JSONObject plant = plants.getJSONObject(i);
+                    ImageView view = (ImageView) getViewsByTag(grid_3, plant.getInt("positionX") + "" + plant.getInt("positionY")).get(0);
+                    view.setImageDrawable(getDrawable(R.mipmap.plant_default));
+                    JSONObject crop = plant.getJSONObject("crop");
+                    grid[plant.getInt("positionX")][plant.getInt("positionY")] = new Plant(
+                      crop.getString("name"),
+                      crop.getDouble("moisture_threshold"),
+                      crop.getDouble("recommended_ph"),
+                      crop.getDouble("recommended_temperature")
+                    );
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
 
+    private static ArrayList<View> getViewsByTag(ViewGroup root, String tag){
+        ArrayList<View> views = new ArrayList<View>();
+        final int childCount = root.getChildCount();
+        for (int i = 0; i < childCount; i++) {
+            final View child = root.getChildAt(i);
+            if (child instanceof ViewGroup) {
+                views.addAll(getViewsByTag((ViewGroup) child, tag));
+            }
 
-
-//    public void OpenProfiles(View view) {
-//        Intent intent = new Intent(this, ProfilesActivity.class);
-//        startActivity(intent);
-//    }
+            final Object tagObj = child.getTag();
+            if (tagObj != null && tagObj.equals(tag)) {
+                views.add(child);
+            }
+        }
+        return views;
+    }
 }

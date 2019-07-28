@@ -42,15 +42,19 @@ public class AddPlantActivity extends AppCompatActivity {
         plant_name = (EditText) findViewById(R.id.plant_name_from_user);
         mQueue = Volley.newRequestQueue(this);
 
-        positionx = getIntent().getStringExtra("position").charAt(0);
-        positiony = getIntent().getStringExtra("position").charAt(1);
+        positionx = Character.getNumericValue(getIntent().getStringExtra("position").charAt(0));
+        positiony = Character.getNumericValue(getIntent().getStringExtra("position").charAt(1));
+
+        Log.d("Add",getIntent().getStringExtra("position").toString());
+        Log.d("positionx" , positionx+"");
+        Log.d("positiony" , positiony+"");
 
         plant_name.setOnKeyListener(new OnKeyListener() {
             @Override
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
                 if((keyEvent.getAction() == KeyEvent.ACTION_DOWN ) && (i == KeyEvent.KEYCODE_ENTER)){
                     // TODO: 7/25/2019 send the name of the plant to the backend
-                    String url = "http://192.168.1.7:8000/api/user/add";
+                    String url = "http://159.122.174.163:31175/api/user/add";
 
                     JSONObject postparams = new JSONObject();
                     try {
@@ -65,9 +69,15 @@ public class AddPlantActivity extends AppCompatActivity {
                             new Response.Listener<JSONObject>() {
                                 @Override
                                 public void onResponse(JSONObject response) {
+                                    Log.d("Add",response.toString());
                                     Toast toast = Toast.makeText(getApplicationContext(),"Plant "+ plant_name.getText().toString() + " added successfully",Toast.LENGTH_SHORT);
                                     toast.setMargin(0,0.6f);
                                     toast.show();
+                                    try {
+                                        GotoGrid(response.getJSONObject("data"));
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
                                 }
                             },
                             new Response.ErrorListener() {
@@ -105,6 +115,13 @@ public class AddPlantActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(getApplicationContext(),"Plant added successfully",Toast.LENGTH_SHORT);
         toast.setMargin(0,0.6f);
         toast.show();
+    }
+
+    void GotoGrid(JSONObject data){
+        Intent intent = new Intent(this,MainActivity.class);
+        intent.putExtra("refresh",true);
+        intent.putExtra("data",data.toString());
+        startActivity(intent);
     }
 
 }

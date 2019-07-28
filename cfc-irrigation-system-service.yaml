@@ -15,5 +15,6 @@ spec:
     targetPort: 8000
   selector:
     io.kompose.service: cfc-irrigation-system
+  type: NodePort
 status:
   loadBalancer: {}

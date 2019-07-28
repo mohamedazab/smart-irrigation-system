@@ -6,7 +6,8 @@ from django.contrib.auth.hashers import check_password
 
 from .models import User, Plant
 
-def formulate_response(message, success, code, data=None):
+def formulate_response(message, code, data=None):
+    success = True if code < 300 else False
     if data is None:
         resp_dict = {"success": success, "message": message}
     else:

@@ -81,7 +81,6 @@ def sign_up(request):
 @csrf_exempt
 def log_in(request):
     # response attributes
-    print("testCD")
     response_message = "login successful"
     response_success = True
     response_code = 200

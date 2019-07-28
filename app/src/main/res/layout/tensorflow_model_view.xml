@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--Unused layout file-->
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
@@ -6,849 +9,849 @@
     android:layout_height="match_parent"
     android:layout_gravity="center">
 
-    <ScrollView
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:scrollbars="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <GridLayout
-            android:id="@+id/test_btn_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:columnCount="10"
-            android:rowCount="10"
-            android:scrollbars="vertical"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <!--<ImageView-->
-            <!--android:id="@+id/profile_pic"-->
-            <!--android:layout_width="100dp"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:background="#00000000"-->
-            <!--android:onClick="Test_button"-->
-            <!--android:src="@mipmap/plant_default"-->
-            <!--android:transitionName="transition_profile_1"/>-->
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp" />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp" />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp" />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp" />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp" />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp" />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp" />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp" />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp" />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp" />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#00000000"
-                android:onClick="Add_plant"
-                android:src="@drawable/ic_add_box_black_24dp"
-                />
-
-
-        </GridLayout>
-    </ScrollView>
-    <!--<GridLayout-->
-        <!--android:id="@+id/test_btn_layout"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="horizontal"-->
-        <!--android:columnCount="3"-->
-        <!--android:rowCount="3"-->
-        <!--android:verticalScrollbarPosition="left"-->
+    <!--<ScrollView-->
         <!--app:layout_constraintTop_toTopOf="parent"-->
         <!--app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--app:layout_constraintStart_toStartOf="parent"-->
-        <!--app:layout_constraintEnd_toEndOf="parent">-->
+        <!--android:scrollbars="horizontal"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content">-->
+        <!--<GridLayout-->
+            <!--android:id="@+id/test_btn_layout"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:columnCount="10"-->
+            <!--android:rowCount="10"-->
+            <!--android:scrollbars="vertical"-->
+            <!--app:layout_constraintTop_toTopOf="parent"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--app:layout_constraintEnd_toEndOf="parent">-->
+
+            <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/profile_pic"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="100dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="100dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:background="#00000000"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:onClick="Test_button"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:src="@mipmap/plant_default"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:transitionName="transition_profile_1"/>&ndash;&gt;-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp" />-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp" />-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp" />-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp" />-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp" />-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp" />-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp" />-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp" />-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp" />-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp" />-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:background="#00000000"-->
+                <!--android:onClick="Add_plant"-->
+                <!--android:src="@drawable/ic_add_box_black_24dp"-->
+                <!--/>-->
+
+
+        <!--</GridLayout>-->
+    <!--</ScrollView>-->
+    <!--&lt;!&ndash;<GridLayout&ndash;&gt;-->
+        <!--&lt;!&ndash;android:id="@+id/test_btn_layout"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:orientation="horizontal"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:columnCount="3"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:rowCount="3"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:verticalScrollbarPosition="left"&ndash;&gt;-->
+        <!--&lt;!&ndash;app:layout_constraintTop_toTopOf="parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;app:layout_constraintBottom_toBottomOf="parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;app:layout_constraintEnd_toEndOf="parent">&ndash;&gt;-->
+
+        <!--&lt;!&ndash;&lt;!&ndash;<ImageView&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash;android:id="@+id/profile_pic"&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash;android:layout_width="100dp"&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash;android:layout_height="100dp"&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash;android:background="#00000000"&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash;android:onClick="Test_button"&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash;android:src="@mipmap/plant_default"&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash;android:transitionName="transition_profile_1"/>&ndash;&gt;&ndash;&gt;-->
 
         <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
-        <!--&lt;!&ndash;android:id="@+id/profile_pic"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:layout_width="100dp"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:layout_height="100dp"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:background="#00000000"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:onClick="Test_button"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:src="@mipmap/plant_default"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:transitionName="transition_profile_1"/>&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/add_plant"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="100dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="100dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:background="#00000000"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:onClick="Add_plant"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:src="@drawable/ic_add_box_black_24dp" />&ndash;&gt;-->
 
-        <!--<ImageView-->
-            <!--android:id="@+id/add_plant"-->
-            <!--android:layout_width="100dp"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:background="#00000000"-->
-            <!--android:onClick="Add_plant"-->
-            <!--android:src="@drawable/ic_add_box_black_24dp" />-->
+        <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/add_plant2"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="100dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="100dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:background="#00000000"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:onClick="Add_plant"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:src="@drawable/ic_add_box_black_24dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;/>&ndash;&gt;-->
 
-        <!--<ImageView-->
-            <!--android:id="@+id/add_plant2"-->
-            <!--android:layout_width="100dp"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:background="#00000000"-->
-            <!--android:onClick="Add_plant"-->
-            <!--android:src="@drawable/ic_add_box_black_24dp"-->
-            <!--/>-->
+        <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/add_plant3"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="100dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="100dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:background="#00000000"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:onClick="Add_plant"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:src="@drawable/ic_add_box_black_24dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;/>&ndash;&gt;-->
 
-        <!--<ImageView-->
-            <!--android:id="@+id/add_plant3"-->
-            <!--android:layout_width="100dp"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:background="#00000000"-->
-            <!--android:onClick="Add_plant"-->
-            <!--android:src="@drawable/ic_add_box_black_24dp"-->
-            <!--/>-->
+        <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/add_plant4"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="100dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="100dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:background="#00000000"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:onClick="Add_plant"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:src="@drawable/ic_add_box_black_24dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;/>&ndash;&gt;-->
 
-        <!--<ImageView-->
-            <!--android:id="@+id/add_plant4"-->
-            <!--android:layout_width="100dp"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:background="#00000000"-->
-            <!--android:onClick="Add_plant"-->
-            <!--android:src="@drawable/ic_add_box_black_24dp"-->
-            <!--/>-->
+        <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/add_plant5"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="100dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="100dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:background="#00000000"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:onClick="Add_plant"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:src="@drawable/ic_add_box_black_24dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;/>&ndash;&gt;-->
 
-        <!--<ImageView-->
-            <!--android:id="@+id/add_plant5"-->
-            <!--android:layout_width="100dp"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:background="#00000000"-->
-            <!--android:onClick="Add_plant"-->
-            <!--android:src="@drawable/ic_add_box_black_24dp"-->
-            <!--/>-->
+        <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/add_plant6"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="100dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="100dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:background="#00000000"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:onClick="Add_plant"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:src="@drawable/ic_add_box_black_24dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;/>&ndash;&gt;-->
 
-        <!--<ImageView-->
-            <!--android:id="@+id/add_plant6"-->
-            <!--android:layout_width="100dp"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:background="#00000000"-->
-            <!--android:onClick="Add_plant"-->
-            <!--android:src="@drawable/ic_add_box_black_24dp"-->
-            <!--/>-->
+        <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/add_plant7"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="100dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="100dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:background="#00000000"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:onClick="Add_plant"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:src="@drawable/ic_add_box_black_24dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;/>&ndash;&gt;-->
 
-        <!--<ImageView-->
-            <!--android:id="@+id/add_plant7"-->
-            <!--android:layout_width="100dp"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:background="#00000000"-->
-            <!--android:onClick="Add_plant"-->
-            <!--android:src="@drawable/ic_add_box_black_24dp"-->
-            <!--/>-->
+        <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/add_plant8"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="100dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="100dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:background="#00000000"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:onClick="Add_plant"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:src="@drawable/ic_add_box_black_24dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;/>&ndash;&gt;-->
 
-        <!--<ImageView-->
-            <!--android:id="@+id/add_plant8"-->
-            <!--android:layout_width="100dp"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:background="#00000000"-->
-            <!--android:onClick="Add_plant"-->
-            <!--android:src="@drawable/ic_add_box_black_24dp"-->
-            <!--/>-->
-
-        <!--<ImageView-->
-            <!--android:id="@+id/add_plant9"-->
-            <!--android:layout_width="100dp"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:background="#00000000"-->
-            <!--android:onClick="Add_plant"-->
-            <!--android:src="@drawable/ic_add_box_black_24dp"-->
-            <!--/>-->
-    <!--</GridLayout>-->
+        <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/add_plant9"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="100dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="100dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:background="#00000000"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:onClick="Add_plant"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:src="@drawable/ic_add_box_black_24dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;/>&ndash;&gt;-->
+    <!--&lt;!&ndash;</GridLayout>&ndash;&gt;-->
 
 
 

@@ -9,6 +9,8 @@
     android:textAlignment="center"
     tools:context=".AddPlantActivity">
 
+    <!--Background Image-->
+
     <ImageView
         android:id="@+id/bgapp"
         android:scaleType="fitXY"
@@ -23,6 +25,8 @@
         app:layout_constraintHorizontal_bias="0.923"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!--Add plant Text-->
 
     <LinearLayout
         android:id="@+id/texthome"
@@ -52,6 +56,8 @@
             android:textSize="16sp" />
 
     </LinearLayout>
+
+    <!--Adding plant options-->
 
     <LinearLayout
         android:translationY="-350dp"

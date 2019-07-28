@@ -1,4 +1,5 @@
-package com.example.catastrophe;
+//This class is unused by the app
+//package com.example.catastrophe;
 
 import android.content.Context;
 import android.view.LayoutInflater;

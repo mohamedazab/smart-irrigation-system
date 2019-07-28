@@ -40,22 +40,27 @@ public class AddPlantActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_plant_options);
         plant_name = (EditText) findViewById(R.id.plant_name_from_user);
+//        initializing the volley queue
         mQueue = Volley.newRequestQueue(this);
 
+//        receiving the position of the grid cell that was pressed from the previous activity
         positionx = Character.getNumericValue(getIntent().getStringExtra("position").charAt(0));
         positiony = Character.getNumericValue(getIntent().getStringExtra("position").charAt(1));
 
-        Log.d("Add",getIntent().getStringExtra("position").toString());
+        Log.d("Add", getIntent().getStringExtra("position"));
         Log.d("positionx" , positionx+"");
         Log.d("positiony" , positiony+"");
 
+//        whenever enter key was pressed on the keyboard
         plant_name.setOnKeyListener(new OnKeyListener() {
             @Override
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
                 if((keyEvent.getAction() == KeyEvent.ACTION_DOWN ) && (i == KeyEvent.KEYCODE_ENTER)){
-                    // TODO: 7/25/2019 send the name of the plant to the backend
+
+//                    The add plant URL from the deployed server
                     String url = "http://159.122.174.163:31175/api/user/add";
 
+//                    adding the position and name of the plant to the body of the request
                     JSONObject postparams = new JSONObject();
                     try {
                         postparams.put("positionX", positionx);
@@ -65,14 +70,17 @@ public class AddPlantActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
 
+//                    making the PUT request to add the plant
                     JsonObjectRequest request = new JsonObjectRequest(Request.Method.PUT, url, postparams,
                             new Response.Listener<JSONObject>() {
                                 @Override
                                 public void onResponse(JSONObject response) {
+//                                    if the plant was added successfully then we send a pop up saying that this plant was added successfully
                                     Log.d("Add",response.toString());
                                     Toast toast = Toast.makeText(getApplicationContext(),"Plant "+ plant_name.getText().toString() + " added successfully",Toast.LENGTH_SHORT);
                                     toast.setMargin(0,0.6f);
                                     toast.show();
+//                                    then we return to the MainActivity to refresh the grid
                                     try {
                                         GotoGrid(response.getJSONObject("data"));
                                     } catch (JSONException e) {
@@ -83,6 +91,7 @@ public class AddPlantActivity extends AppCompatActivity {
                             new Response.ErrorListener() {
                                 @Override
                                 public void onErrorResponse(VolleyError error) {
+//                                    if we received an error then we send a pop up saying that we failed to add the plant
                                     Log.d("Add plant",error.networkResponse.statusCode+"");
                                     Toast toast = Toast.makeText(getApplicationContext(),"Failed to add Plant "+ plant_name.getText().toString(),Toast.LENGTH_SHORT);
                                     toast.setMargin(0,0.6f);
@@ -90,6 +99,7 @@ public class AddPlantActivity extends AppCompatActivity {
                                     error.printStackTrace();
                                 }
                             });
+//                    then we add the PUT request to the volley queue
                     mQueue.add(request);
                     return true;
                 }else {
@@ -99,24 +109,64 @@ public class AddPlantActivity extends AppCompatActivity {
         });
 
     }
-
+//    This method is responsible for opening the camera to take a photo of a plant
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     public void Take_photo(View view ){
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent,0);
     }
 
+//    This method is responsible for receiving the photo of the plant from the camera and sending it to the backend
+//    to classify the plant and send back its info and add it to the grid
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         Bitmap bitmap = (Bitmap) data.getExtras().get("data");
 
-        // TODO: 7/25/2019 send the bitmap to the server for classification
+        String url = "http://159.122.174.163:31175/api/user/add";
+
+        JSONObject postparams = new JSONObject();
+        try {
+            postparams.put("positionX", positionx);
+            postparams.put("positionY", positiony);
+            postparams.put("plant_name", "theplant");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.PUT, url, postparams,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.d("Add",response.toString());
+                        Toast toast = Toast.makeText(getApplicationContext(),"Plant "+ plant_name.getText().toString() + " added successfully",Toast.LENGTH_SHORT);
+                        toast.setMargin(0,0.6f);
+                        toast.show();
+                        try {
+                            GotoGrid(response.getJSONObject("data"));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.d("Add plant",error.networkResponse.statusCode+"");
+                        Toast toast = Toast.makeText(getApplicationContext(),"Failed to add Plant "+ plant_name.getText().toString(),Toast.LENGTH_SHORT);
+                        toast.setMargin(0,0.6f);
+                        toast.show();
+                        error.printStackTrace();
+                    }
+                });
+        mQueue.add(request);
+
         Toast toast = Toast.makeText(getApplicationContext(),"Plant added successfully",Toast.LENGTH_SHORT);
         toast.setMargin(0,0.6f);
         toast.show();
     }
 
+//    This method is responsible for returning back to the main activity and refreshing the grid
     void GotoGrid(JSONObject data){
         Intent intent = new Intent(this,MainActivity.class);
         intent.putExtra("refresh",true);

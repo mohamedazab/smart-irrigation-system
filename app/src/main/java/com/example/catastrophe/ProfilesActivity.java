@@ -1,3 +1,4 @@
+//This class is unused by the app
 //package com.example.catastrophe;
 //
 //import android.os.Bundle;

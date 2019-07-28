@@ -8,6 +8,8 @@
     android:textAlignment="center"
     tools:context=".MainActivity">
 
+    <!--The clover image at the top left-->
+
     <ImageView
         android:id="@+id/clover"
         android:layout_marginEnd="220dp"
@@ -19,6 +21,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
+
+    <!--the Catastrophe text-->
 
     <LinearLayout
         android:id="@+id/texthome"
@@ -49,7 +53,7 @@
 
     </LinearLayout>
 
-    <!--Top text-->
+    <!--The Welcome text-->
 
     <LinearLayout
         android:id="@+id/textsplash"
@@ -83,75 +87,7 @@
 
     </LinearLayout>
 
-    <!--Home Screen Icons-->
-
-    <!--<LinearLayout-->
-        <!--android:id="@+id/menus"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginStart="8dp"-->
-        <!--android:layout_marginLeft="8dp"-->
-        <!--android:layout_marginTop="300dp"-->
-        <!--android:layout_marginEnd="8dp"-->
-        <!--android:layout_marginRight="8dp"-->
-        <!--android:elevation="6dp"-->
-        <!--android:orientation="vertical"-->
-        <!--app:layout_constraintEnd_toEndOf="parent"-->
-        <!--app:layout_constraintStart_toStartOf="parent"-->
-        <!--app:layout_constraintTop_toTopOf="parent">-->
-
-        <!--<LinearLayout-->
-            <!--android:layout_marginRight="0dp"-->
-            <!--android:layout_marginLeft="50dp"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:orientation="horizontal">-->
-
-            <!--<LinearLayout-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginRight="50dp"-->
-                <!--android:gravity="center"-->
-                <!--android:orientation="vertical">-->
-
-                <!--<ImageView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_marginBottom="4dp"-->
-                    <!--android:src="@drawable/biton_1" />-->
-
-                <!--<TextView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="bitcoin"-->
-                    <!--android:textColor="#0E1843"-->
-                    <!--android:textSize="16sp" />-->
-
-            <!--</LinearLayout>-->
-
-            <!--<LinearLayout-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginRight="50dp"-->
-                <!--android:gravity="center"-->
-                <!--android:orientation="vertical">-->
-
-                <!--<ImageView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_marginBottom="4dp"-->
-                    <!--android:src="@drawable/biton_1" />-->
-
-                <!--<TextView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="bitcoin"-->
-                    <!--android:textColor="#0E1843"-->
-                    <!--android:textSize="16sp" />-->
-
-            <!--</LinearLayout>-->
-        <!--</LinearLayout>-->
-    <!--</LinearLayout>-->
+    <!--Login and sign up forms-->
 
     <LinearLayout
         android:id="@+id/login_signup_form"
@@ -283,6 +219,8 @@
         </LinearLayout>
     </LinearLayout>
 
+    <!--The grid that represents the plants in the user's farm-->
+
     <GridLayout
         android:id="@+id/grid_3"
         android:layout_width="match_parent"
@@ -395,6 +333,8 @@
             android:transitionName="transition_profile_1"
             />
     </GridLayout>
+
+    <!--The background image-->
 
     <ImageView
         android:id="@+id/bgapp"

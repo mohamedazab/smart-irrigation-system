@@ -21,12 +21,14 @@ public class PlantProfileActivity extends AppCompatActivity {
         recommended_ph = (TextView) findViewById(R.id.Recommended_PH);
         recommended_temprature = (TextView) findViewById(R.id.Recommended_Temperature);
 
+//        Here we receive the plant's info from the previous activity to show it on the UI
         name.setText(getIntent().getStringExtra("name"));
         moisture_threshold.setText(getIntent().getDoubleExtra("moisture_threshold",0)+"");
         recommended_ph.setText(getIntent().getDoubleExtra("recommended_ph",0)+"");
         recommended_temprature.setText(getIntent().getDoubleExtra("recommended_temprature",0)+"");
     }
 
+//    This method is responsible for deleting the plant from the grid but it is currently unimplemented
     public void Delete_plant(View view){
 
     }

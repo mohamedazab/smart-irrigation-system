@@ -6,6 +6,8 @@ import android.graphics.drawable.Icon;
  * Created by gehad on 6/22/19.
  */
 
+//A class the holds the properties of the plants
+
 public class Plant {
 
     public Icon icon;

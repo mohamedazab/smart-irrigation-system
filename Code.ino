@@ -52,10 +52,10 @@ void loop() {
   http.begin("http://159.122.174.163:31175/api/user/update-moisture");                                     //Specify request destination
 
   http.addHeader("Content-Type", "application/json"); //Specify content-type header
-  String s = "{\"email\":\"testing\", \"password\":\"testing\", \"positionX\": 0, \"positionY\": 0, \"current_moisture\":" + String(sensorValMapped) + "}";
+  String userRequest = "{\"email\":\"testing\", \"password\":\"testing\", \"positionX\": 0, \"positionY\": 0, \"current_moisture\":" + String(sensorValMapped) + "}";
 
 
-  int httpCode = http.PUT(s); //Send the request
+  int httpCode = http.PUT(userRequest); //Send the request
 
   String payload = http.getString();    //Get the response payload
 

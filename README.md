@@ -32,7 +32,7 @@ The learning rate used was 1*10^-5 instead of the default learning rate.
 
 This model was trained to detect wilting in grass.
 
-The dataset used contained around 140 images of either normal grass or wilting/wilted grass. It achieved an accuracy of around 80% on the test set in 7 epochs and showed no significant improvement. However using a better architecture can probably train it better.
+The dataset used contained around 140 images of either normal grass or wilting/wilted grass. It achieved an accuracy of around 90% on the test set in 17 epochs.
 
 ![grass predictions](https://raw.githubusercontent.com/mohamedazab/smart-irrigation-system/ML-models/assets/grass.jpg)
 

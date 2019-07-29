@@ -29,9 +29,10 @@ The learning rate used was 1*10^-5 instead of the default learning rate.
 ![Predictions](https://github.com/mohamedazab/smart-irrigation-system/blob/ML-models/assets/dense.jpg)
 
 ##### Plant Wilt Detection
-![Normal](https://user-images.githubusercontent.com/25390378/62054280-8e218a00-b219-11e9-8a7c-0e8ac7b3f1a2.jpg)
-![Wilted](https://user-images.githubusercontent.com/25390378/62054296-9679c500-b219-11e9-9089-170314576601.jpg)
 
 This model was trained to detect wilting in grass.
 
-The dataset used contained around 140 images of either normal grass or wilting/wilted grass. It achieved an accuracy of around 70% in 7 epochs and showed no significant improvement. However making a deeper network can probably train it better.
+The dataset used contained around 140 images of either normal grass or wilting/wilted grass. It achieved an accuracy of around 80% on the test set in 7 epochs and showed no significant improvement. However using a better architecture can probably train it better.
+
+![grass predictions](https://raw.githubusercontent.com/mohamedazab/smart-irrigation-system/ML-models/assets/grass.jpg)
+

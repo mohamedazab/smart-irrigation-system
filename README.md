@@ -26,7 +26,7 @@ The dataset was collected manually to ensure stable distribution of data over th
 The number of epochs was automatically determined by the callbacks early stopping function where the model should stop 10 epochs after there is no change more than 1*10^-3 in the validation error.
 The learning rate used was 1*10^-5 instead of the default learning rate.
 
-![Predictions](https://github.com/mohamedazab/smart-irrigation-system/blob/ML-models/assets/dense.jpg)
+<div style="text-align:center"><img src="https://github.com/mohamedazab/smart-irrigation-system/blob/ML-models/assets/dense.jpg" /</div>
 
 ##### Plant Wilt Detection
 

@@ -1,22 +1,34 @@
 # Machine Learning Models
 
-We created two machine learning models using tensorflow in our project.
+This repo contains two Machine Learning models that we created to perform two tasks:
+<ol>
+  <li>Plant Recognition task</li>
+  <li>Plant Wilt Detection Task</li>
+</ol> 
 
-One is used to identify different kinds of plants in order to aid those who are unfamiliar with agriculture as well as those who find it more convenient to automate the process.
+The first model is capable of identifying the species of the plant to help people unfamiliar with agriculture (like villa owners) as well as those who find it more convenient to automate the agriculture process.
 
-The other is a model that was made to detect wilting in different kinds of plants in order for them to receive the necessary care, or for the plant to be removed.
+The other is a model that was made to detect wilting in different kinds of plants in order for them to receive the necessary care, or for the plant to be removed to minimize wasting water watering dead plants.
 
-Both models have one covolution layer, one pooling layer and one fully connected layer. Better results can be achieved with a deeper model, however the result shown here suffice at least for a prototype.
+Both models use the same architecture with little diferences in the hyperparameters that were tuned for each task seperately.
 
-## Plant Recognition Model
-![philodendron](https://user-images.githubusercontent.com/25390378/62054054-21a68b00-b219-11e9-9edd-7d3f4e9bdada.jpg)
-![wheat](https://user-images.githubusercontent.com/25390378/62054030-15bac900-b219-11e9-9752-3a94d4500207.jpg)
+## Model Architecture
+The model was implemented using transfer learning technique in order to get acceptable results, although the model was trained on small amount of images that we collected manually. 
 
-This model was trained to recognize 5 different kinds of plants.
+The architecture consisted of densenet model with 121 layers pre-trained on imagnet dataset with 1000 classes, a single convolutional layer and a final dense output layer.
 
-The dataset used contained over 400 images of 5 different kinds of plants and achieved an accuracy of over 85% (95% on training data) in just 60 epochs.
+Different parameters were used in each model as follows:
+#### Plant Recognition Model
 
-## Plant Wilt Detection
+This model was trained to recognize 5 different kinds of plants as an example for plants that most of the already implemented APIs werent able to classify.
+
+The dataset was collected manually to ensure stable distribution of data over the dataset and over 400 images of 5 different kinds of plants and achieved an accuracy of over 90% (95% on training data) in just 60 epochs.
+The number of epochs was automatically determined by the callbacks early stopping function where the model should stop 10 epochs after there is no change more than 1*10^-3 in the validation error.
+The learning rate used was 1*10^-5 instead of the default learning rate.
+
+![Predictions](https://github.com/mohamedazab/smart-irrigation-system/blob/ML-models/assets/dense.jpg)
+
+##### Plant Wilt Detection
 ![Normal](https://user-images.githubusercontent.com/25390378/62054280-8e218a00-b219-11e9-8a7c-0e8ac7b3f1a2.jpg)
 ![Wilted](https://user-images.githubusercontent.com/25390378/62054296-9679c500-b219-11e9-9089-170314576601.jpg)
 

@@ -32,5 +32,4 @@ This model was trained to detect wilting in grass.
 
 The dataset used contained around 140 images of either normal grass or wilting/wilted grass. It achieved an accuracy of around 90% on the test set in 17 epochs.
 
-![grass predictions](https://raw.githubusercontent.com/mohamedazab/smart-irrigation-system/ML-models/assets/grass.jpg)
-
+![grass](https://user-images.githubusercontent.com/25390378/62080409-e32cc280-b250-11e9-920a-7d94346c0f52.jpg)

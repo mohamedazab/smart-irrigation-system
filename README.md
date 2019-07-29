@@ -2,8 +2,30 @@
 
 Deployed on Kubernetes cluster on IBM cloud: http://159.122.174.163:31175
 
+## How To Run
+1. Create a `.env` file containing the following values and put it in the project's root folder.
+    - `sk`: The django secret key
+    - `db_user`: The username for the database admin/user
+    - `db_password`: The password for the databse admin/user
+2. Start a pipenv shell
+    ```sh
+    $ pipenv shell
+    ```
+3. Install all the python requirements with pip
+    ```sh
+    $ pip install -r requirements.txt
+    ```
+4. Make any necessary migrations
+    ```sh
+    $ python manage.py makemigrations
+    $ python manage.py migrate
+    ```
+5. Start the server
+    ```sh
+    $ python manage.py runserver
+    ```
 
-# API Documentation
+## API Documentation
 API used to interface between database, mobile app and hardware device for our smart irrigation system.
 
 For the full documentation [go here](https://app.swaggerhub.com/apis-docs/AbdelrahmanKhaledAmer/CFC-Smart-Irrigation/1.0.0)

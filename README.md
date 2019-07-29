@@ -1,10 +1,8 @@
 # Machine Learning Models
 
 This repo contains two Machine Learning models that we created to perform two tasks:
-<ol>
-  <li>Plant Recognition task</li>
-  <li>Plant Wilt Detection Task</li>
-</ol> 
+1. Plant Recognition task
+2. Plant Wilt Detection Task
 
 The first model is capable of identifying the species of the plant to help people unfamiliar with agriculture (like villa owners) as well as those who find it more convenient to automate the agriculture process.
 
@@ -26,7 +24,7 @@ The dataset was collected manually to ensure stable distribution of data over th
 The number of epochs was automatically determined by the callbacks early stopping function where the model should stop 10 epochs after there is no change more than 1*10^-3 in the validation error.
 The learning rate used was 1*10^-5 instead of the default learning rate.
 
-<div style="text-align:center"><img src="https://github.com/mohamedazab/smart-irrigation-system/blob/ML-models/assets/dense.jpg" /</div>
+![dense](https://user-images.githubusercontent.com/25390378/62078802-aad7b500-b24d-11e9-8ee4-6c325d1e9fac.jpg)
 
 ##### Plant Wilt Detection
 

@@ -34,3 +34,7 @@ To be able to run the system correctly, each device should be configured and the
 To configure your device the string "userRequest" should be changed where the email and passowrd should match the email and password that you created your account with when signing up our mobile app. the position_x and position_y should also be changed to match the position of the device in the grid (in the field or in the garden)
 
 Also you have to change the ssid and password should match the ssid and password of your network wireless modem
+
+
+![System after integration](https://github.com/MoghazyCoder/IOT-System/blob/master/assets/IMG_2629.JPG)
+

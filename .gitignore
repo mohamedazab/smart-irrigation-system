@@ -110,3 +110,5 @@ venv.bak/
 **/migrations/**
 !**/migrations
 !**/migrations/__init__.py
+cfc-irrigation-system-service.yaml
+cfc-irrigation-system-deployment.yaml

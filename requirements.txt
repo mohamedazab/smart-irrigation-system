@@ -1,6 +1,6 @@
 autopep8==1.4.4
 dataclasses==0.6
-Django==2.2.3
+Django>=3.0
 django-cors-headers==3.0.2
 djongo==1.2.33
 dnspython==1.16.0
